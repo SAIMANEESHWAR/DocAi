@@ -9,6 +9,7 @@ function Chatbot() {
     }
     const [convertedText, setConvertedText] = useState('');
 
+    
     useEffect(() => {
         const ff = sessionStorage.getItem("myanalyseimage");
         console.log(ff);
