@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Tesseract from 'tesseract.js';
 import { useNavigate } from 'react-router-dom';
-const API_KEY = "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";
 
 function Chatbot() {
     const navigate = useNavigate();
