@@ -2,6 +2,8 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import DiseasePredictionForm from './sympotonsgpt/symgpt';
+import Dashboardsympton from './sympotonsgpt/dashboardsympton';
 // import FileUpload from './fileUpload/FileUpload';
 import Home from './Home/Home';
 import Registration from './UserCredentials/Registration';
@@ -11,6 +13,7 @@ import NestedRetrieve from './dashboard/dashboardcomponents/NestedRetrieve';
 import NestedUpload from './dashboard/dashboardcomponents/NestedUpload';
 import Chatbot from './minichatgpt/chatbot';
 import ChatComponent from './minichatgpt/chatcomponent';
+// import PDFTextExtractor from './pdfreader/pdfextract';
 
 function App() {
   return (
@@ -26,6 +29,8 @@ function App() {
         </Route>
         <Route path='/Chatbot' element={<Chatbot />}></Route>
         <Route path='/ChatComponent' element={<ChatComponent />}></Route>
+        <Route path='/Dashboardsympton' element={<Dashboardsympton />}></Route>
+        {/* <Route path='/PDFTextExtractor' element={<PDFTextExtractor />}></Route> */}
 
       {/* <Route path='/* ' element={<Pagenotfound />}></Route> */}
     </Routes>

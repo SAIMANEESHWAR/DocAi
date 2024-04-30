@@ -1,24 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import { model } from './mainmodule.js';
 import { useLocation } from 'react-router-dom';
+import Tesseract from 'tesseract.js';
 
 function ChatApp() {
-  const location = useLocation()
+  const location = useLocation();
   const [inputText, setInputText] = useState('');
   const [chatMessages, setChatMessages] = useState([]);
-  const { convertedText } =location.state;
-  console.log(convertedText);
+
+  const [convertedText, setConvertedText] = useState('');
+  var finalval='';
   useEffect(() => {
     const getInitialResponse = async () => {
-      try {
-        const defaultPrompt = convertedText;
-        appendUserMessage(defaultPrompt);
-        const result = await model.generateContent(defaultPrompt);
-        const response = await result.response.text();
-        appendBotMessage(response.trim());
-      } catch (error) {
-        appendErrorMessage("Oops! Something went wrong while retrieving the response. Please try again.");
-      }
+
+      const ff = sessionStorage.getItem("myanalyseimage");
+      // console.log(ff);
+
+      if (!ff) return;
+      
+      Tesseract.recognize(ff)
+          .then(async ({ data: { text } }) => {
+              console.log("Recognized Text:", text);
+              setConvertedText(text);
+              try {
+                console.log(text)
+                const defaultPrompt =text;
+                // const defaultPrompt = convertedText;
+                appendUserMessage(defaultPrompt);
+                const result = await model.generateContent(defaultPrompt);
+                const response = await result.response.text();
+                appendBotMessage(response.trim());
+              } catch (error) {
+                appendErrorMessage("Oops! Something went wrong while retrieving the response. Please try again.");
+              }
+              // navigate('/ChatComponent', { state: { text } });
+          })
+          .catch(error => {
+              console.error("Error recognizing text:", error);
+          });
+
     };
 
     getInitialResponse();
@@ -62,13 +82,19 @@ function ChatApp() {
   };
 
   return (
-    <div className="container-fluid h-100">
-      <div className="row justify-content-center h-100 border" >
-        <div className="col-md-8 col-lg-10 chat-container h-100" >
+    <div className="container-fluid h-100 bg-tertiary">
+      <div className="row justify-content-center h-100 border">
+        <div className="col-md-8 col-lg-8 chat-container h-100">
           {chatMessages.map((message, index) => (
             <div key={index} className={`${message.type}-message-container`}>
               <p className={`${message.type}-message`}>
-                {message.text}
+                <ul className="list-unstyled">
+                  {message.text.split('\n').map((line, index) => (
+                    <li key={index}>
+                      {line.startsWith('**') ? <strong>{line.substring(2)}</strong> : line}
+                    </li>
+                  ))}
+                </ul>
               </p>
             </div>
           ))}
@@ -95,7 +121,7 @@ function ChatApp() {
               id="send-btn"
               className="btn btn-primary mt-2"
               onClick={getChatResponse}
-            >Send</button>
+            ><i class="fa-solid fa-rocket"></i></button>
           </div>
         </div>
       </div>

@@ -8,8 +8,8 @@ import lotusakshay from '../../photos/lotusakshay.jpg';
 import ananya from '../../photos/mem8.jpg'
 
 export default function projectmembers() {
-    const imgSources = [me, mem1, mem2,ananya,lotusakshay];
-    const namesources = ["SaiManeeshwar", "Sravani", "Vinay","Ananya","Akshay"]
+    const imgSources = [me, mem1,ananya,lotusakshay];
+    const namesources = ["SaiManeeshwar", "Sravani","Ananya","Akshay"]
     return (
         <div>
             <div class="container mt-5">

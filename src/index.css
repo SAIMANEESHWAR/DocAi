@@ -105,3 +105,29 @@ textarea {
 #send-btn {
   margin-left: 10px;
 }
+
+
+
+.user-message-container {
+  text-align: right;
+}
+
+.bot-message-container {
+  text-align: left;
+}
+
+.user-message {
+  background-color: #7aa7d7;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.bot-message {
+  background-color: rgb(76, 74, 74); /* Change background color to black */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  display: inline-block;
+}

@@ -84,6 +84,19 @@ function NestedUpload() {
         }).then(async function (tx) {
           console.log(tx);
           console.log('REQUEST SENT SUCCESSFULLY');
+
+          //start
+          if ('speechSynthesis' in window){
+            const utterance = new SpeechSynthesisUtterance();
+            utterance.text = `Transaction successful. Medical report uploaded.`;
+            speechSynthesis.speak(utterance);
+            console.log("safnuwkbesf");
+          }
+          else{
+            console.log("not there");
+          }
+          console.log("end");
+
         }).catch(function (tx) {
           console.log(tx);
         });

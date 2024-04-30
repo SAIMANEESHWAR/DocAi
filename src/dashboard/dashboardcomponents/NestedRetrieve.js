@@ -96,7 +96,7 @@ function NestedRetrieve() {
 
   const Analyse=()=>{
     sessionStorage.setItem("myanalyseimage",imageUrl);
-    navigate("/Chatbot");
+    navigate("/ChatComponent");
   }
 
   return (
