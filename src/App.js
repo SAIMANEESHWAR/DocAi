@@ -13,6 +13,7 @@ import NestedRetrieve from './dashboard/dashboardcomponents/NestedRetrieve';
 import NestedUpload from './dashboard/dashboardcomponents/NestedUpload';
 import Chatbot from './minichatgpt/chatbot';
 import ChatComponent from './minichatgpt/chatcomponent';
+import MedicationMain from './alaram/MedicationMain';
 // import PDFTextExtractor from './pdfreader/pdfextract';
 
 function App() {
@@ -26,10 +27,12 @@ function App() {
       <Route path='/Dashboard' element={<Dashboard />}>
             <Route path="NestedRetrieve" element={<NestedRetrieve />} />
             <Route path="NestedUpload" element={<NestedUpload />} />
+            
         </Route>
         <Route path='/Chatbot' element={<Chatbot />}></Route>
         <Route path='/ChatComponent' element={<ChatComponent />}></Route>
         <Route path='/Dashboardsympton' element={<Dashboardsympton />}></Route>
+        <Route path='MedicationMain' element={<MedicationMain />}></Route>
         {/* <Route path='/PDFTextExtractor' element={<PDFTextExtractor />}></Route> */}
 
       {/* <Route path='/* ' element={<Pagenotfound />}></Route> */}

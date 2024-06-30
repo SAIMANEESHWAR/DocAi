@@ -1,9 +1,10 @@
 import React from 'react'
-import profile from '../../photos/profile1.png';
+import profile from '../photos/profile1.png';
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import MedicationAlarm from './MedicationAlarm.jsx';
 
-export default function DashboardNavbar() {
+export default function MedicationMain() {
     const navigate = useNavigate();
 
     const [userid, setuserid] = useState(sessionStorage.getItem('verifieduseridsession'));
@@ -27,13 +28,11 @@ export default function DashboardNavbar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto  mb-lg-0 navfont">
 
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <div className="d-flex mt-2" role="search">
                                     <Link className="btn btn-outline-success me-3" to="/Dashboard/NestedUpload">Upload</Link>
-                                    <Link className="btn btn-outline-success me-3" to="/Dashboard/NestedRetrieve">Retrieve</Link>   
-                                    {/* <Link className="btn btn-outline-success me-3" to="/Dashboard/MedicationAlarm">MedicationAlarm</Link> */}
-                                    </div>
-                            </li>
+                                    <Link className="btn btn-outline-success me-3" to="/Dashboard/NestedRetrieve">Retrieve</Link>                            </div>
+                            </li> */}
                             <li className="nav-item">
 
                                 <button type="button" className="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -47,24 +46,24 @@ export default function DashboardNavbar() {
                 </div>
             </section>
             <div className='row'>
-                <div className='col-2'>
+                <div className='col-1 h-100'>
                     <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style={{ width: "4.5rem"}}>
                         <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Icon-only">
-                           hiii <span class="visually-hidden">Icon-only</span>
+                           hiii <span class="visually-hidden">block busters</span>
                         </a>
                         <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
-                                 <i class="fa-solid fa-robot"></i>
+                                <a href="/Dashboard/NestedUpload" class="nav-link  py-3 border-bottom rounded-0" aria-current="page" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
+                                <i class="fa-solid fa-robot"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="/Dashboardsympton" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
+                                <a href="/Dashboardsympton" class="nav-link  py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Dashboard" data-bs-original-title="Dashboard">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="/MedicationMain" class="nav-link py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
+                                <a href="#" class="nav-link active py-3 border-bottom rounded-0" data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Orders" data-bs-original-title="Orders">
                                 <i class="fa-solid fa-file-pdf"></i>
                                 </a>
                             </li>
@@ -72,9 +71,9 @@ export default function DashboardNavbar() {
                     </div>
                 </div>
                 <div className='col-10'>
-                    <div>
-                        <Outlet></Outlet>
-
+                    <div className='mt-5'>
+                        {/* <Outlet></Outlet> */}
+                        <MedicationAlarm/>
                         {/* <!-- Modal --> */}
                         <div class="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -96,6 +95,8 @@ export default function DashboardNavbar() {
                         </div>
                     </div>
                 </div>
+
+                <div></div>
 
             </div>
 

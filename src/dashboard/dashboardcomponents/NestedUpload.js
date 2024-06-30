@@ -63,12 +63,27 @@ function NestedUpload() {
         {
           headers: {
             'Content-Type': 'multipart/form-data',
-            pinata_api_key: 'd84df280f768e4b0f769',
-            pinata_secret_api_key: 'e542066a59a3f89a8c77c4cea7832250c686b58466a6f71d02c8af15aa143347',
+            pinata_api_key: 'd030d00a50cacda1bf16',
+            
+
+            pinata_secret_api_key: 'be207924ae528cab2232586b959dab8ca1afc41a860f077af369be9c265588a8',
+            
+
           },
         }
       );
+//       cbithack2
+//       API Key: d030d00a50cacda1bf16
+//  API Secret: be207924ae528cab2232586b959dab8ca1afc41a860f077af369be9c265588a8
+//  JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiNGFkYjU5Mi1hMTQ5LTQyZjMtOTQ0Yi1jZjUzMzg0YTIwM2EiLCJlbWFpbCI6InNpZGRhcHVyYW1zYWltYW5lZXN3YXJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6ImQwMzBkMDBhNTBjYWNkYTFiZjE2Iiwic2NvcGVkS2V5U2VjcmV0IjoiYmUyMDc5MjRhZTUyOGNhYjIyMzI1ODZiOTU5ZGFiOGNhMWFmYzQxYTg2MGYwNzdhZjM2OWJlOWMyNjU1ODhhOCIsImlhdCI6MTcxNzgyODIxN30.vab43tq38w197_aWcNyZc5tyOzpWMnaaOR-Y0cBTsUs
 
+      // s
+      // e542066a59a3f89a8c77c4cea7832250c686b58466a6f71d02c8af15aa143347
+      // d84df280f768e4b0f769
+// cbithack1
+      // API Key: f606be689209f6bf11c4
+      // API Secret: ff7352fdbaa9a421884bebe0e40f0708e72f4bd2c0891c256c1f07591ad8e525
+      // JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiJiNGFkYjU5Mi1hMTQ5LTQyZjMtOTQ0Yi1jZjUzMzg0YTIwM2EiLCJlbWFpbCI6InNpZGRhcHVyYW1zYWltYW5lZXN3YXJAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInBpbl9wb2xpY3kiOnsicmVnaW9ucyI6W3siaWQiOiJGUkExIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9LHsiaWQiOiJOWUMxIiwiZGVzaXJlZFJlcGxpY2F0aW9uQ291bnQiOjF9XSwidmVyc2lvbiI6MX0sIm1mYV9lbmFibGVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIn0sImF1dGhlbnRpY2F0aW9uVHlwZSI6InNjb3BlZEtleSIsInNjb3BlZEtleUtleSI6ImY2MDZiZTY4OTIwOWY2YmYxMWM0Iiwic2NvcGVkS2V5U2VjcmV0IjoiZmY3MzUyZmRiYWE5YTQyMTg4NGJlYmUwZTQwZjA3MDhlNzJmNGJkMmMwODkxYzI1NmMxZjA3NTkxYWQ4ZTUyNSIsImlhdCI6MTcxNjQ4ODMyNH0.9Mt3TujuWBwhBX9cErle8sRrS8vnIZMBe_hs_msLeoI
       setUploadResult(response.data);
 
       // Interaction with the blockchain
